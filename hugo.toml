@@ -1,6 +1,6 @@
-baseURL = 'https://example.org/'
-languageCode = 'en-us'
-title = 'My New Hugo Site'
+baseURL = 'https://sergiodev.eth.limo/'
+languageCode = 'es'
+title = 'the wannabe engineer'
 theme = 'not-much'
 
 [markup]
@@ -21,7 +21,7 @@ showPostsSummary = true
   [[menu.main]]
     identifier = "home"
     name = "home"
-    title = "Home"
+    title = "home"
     url = "/"
     weight = 1
   
@@ -35,7 +35,7 @@ showPostsSummary = true
   [[menu.main]]
     identifier = "about"
     name = "about"
-    title = "About"
+    title = "about"
     url = "/about"
     weight = 2
   

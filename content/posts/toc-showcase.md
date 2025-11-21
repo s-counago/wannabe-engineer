@@ -6,6 +6,7 @@ keywords: ["gohugo", "hugo", "go", "blog"]
 tags: ["hugo", "themes"]
 summary: This post shows the default Hugo Table of Contents and how not-much handle it.
 toc: true
+draft: true
 ---
 
 ## How not-much handle the ToC

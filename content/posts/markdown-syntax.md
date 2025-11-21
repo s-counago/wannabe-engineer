@@ -4,7 +4,7 @@ date: 2024-12-14
 slug: "markdown-syntax-guide"
 description: "Sample article showcasing basic Markdown syntax and formatting for HTML elements"
 keywords: ["gohugo", "hugo", "go", "blog"]
-draft: false
+draft: true
 tags: ["markdown", "css", "html", "themes"]
 math: true
 summary: This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -51,7 +51,6 @@ Itatur? Quiatae cullecum rem ent aut odis in re eossequodi nonsequ idebis ne sap
 Here's a simple footnote[^1], and here's a longer one[^bignote].
 
 [^1]: This is the first footnote.
-
 [^bignote]: Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
@@ -66,7 +65,6 @@ Code:
 Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 [^1]: This is the first footnote.
-
 [^bignote]: Here's one with multiple paragraphs and code.
 
     Indent paragraphs to include them in the footnote.
@@ -97,23 +95,23 @@ The blockquote element represents content that is quoted from another source, op
 
 Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-box.
 
-| Text aligned on the left  | Text aligned in the center | Text aligned on the right |
-| ----- | :---: | ----: |
-| left   | center  | right |
-| left   | center  | right |
-| left   | center  | right |
-| left   | center  | right |
+| Text aligned on the left | Text aligned in the center | Text aligned on the right |
+| ------------------------ | :------------------------: | ------------------------: |
+| left                     |           center           |                     right |
+| left                     |           center           |                     right |
+| left                     |           center           |                     right |
+| left                     |           center           |                     right |
 
 #### Inline Markdown within tables
 
-| Inline style | Rendered |
-| --------- | -------- |
-| `_italics_` | _italics_ |
-| `**strong**` | **strong** |
-| ``code`` | `code` |
-| `~~strikethrough~~` | ~~strikethrough~~ |
-| `$\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$` | $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$ |
-| `[Link](https://example.com)` | [Link](https://example.com) |
+| Inline style                                              | Rendered                                                             |
+| --------------------------------------------------------- | -------------------------------------------------------------------- |
+| `_italics_`                                               | _italics_                                                            |
+| `**strong**`                                              | **strong**                                                           |
+| `code`                                                    | `code`                                                               |
+| `~~strikethrough~~`                                       | ~~strikethrough~~                                                    |
+| `$\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$`          | $\varphi = \dfrac{1+\sqrt5}{2}= 1.6180339887…$                       |
+| `[Link](https://example.com)`                             | [Link](https://example.com)                                          |
 | `[Link](https://example.com "Example link with tooltip")` | [Link with tooltip](https://example.com "Example link with tooltip") |
 
 ## List Types
@@ -143,15 +141,15 @@ Tables aren't part of the core Markdown spec, but Hugo supports them out-of-the-
 #### Nested Ordered list
 
 1. Fruit
-    - Apple
-    - Orange
-    - Banana
+   - Apple
+   - Orange
+   - Banana
 2. Dairy
-    1. Milk
-    2. Cheese
+   1. Milk
+   2. Cheese
 3. Third item
-    1. Sub One
-    2. Sub Two
+   1. Sub One
+   2. Sub Two
 
 #### Definition List
 

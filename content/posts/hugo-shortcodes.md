@@ -7,6 +7,7 @@ keywords: ["gohugo", "hugo", "go", "blog"]
 tags: ["hugo", "themes"]
 summary: This post shows the default Hugo shortcodes and how they are rendered.
 toc: true
+draft: true
 ---
 
 ## Details
@@ -19,6 +20,7 @@ This is a **bold** word.
 
 {{< highlight go-html-template >}}
 {{ range .Pages }}
+
   <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
 {{ end }}
 {{< /highlight >}}

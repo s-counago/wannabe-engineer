@@ -1,7 +1,11 @@
 ---
-lead: "Basic, simple and minimal Hugo theme"
+lead: "Meditaciones de un junior"
 ---
 
-This is a demo of the `not-much` theme, built with Hugo, and is intended to be trouble-free. Explore it to see what `not-much` has to offer.
+Sobre mis experiencias aprendiendo de forma autodidacta ([y no tan autodidacta](https://scod.is-a.dev/studies.html)) en nuestros tiempos.
 
-💡 Check the [about page](./about) to learn more about this theme.
+Más sobre mí en mi [sitio personal](https://scod.is-a.dev/).
+
+[¿Por qué un dominio tan raro?]({{< relref "posts/que-es-eth-limo" >}})
+
+Hecho con [Hugo](https://github.com/gohugoio/hugo), el tema [not-much](https://github.com/imgios/not-much) y mucho [cariño](https://www.youtube.com/watch?v=HVf1pV22Sbw).

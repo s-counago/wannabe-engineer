@@ -1,6 +1,6 @@
 baseURL = 'https://sergiodev.eth.limo/'
 languageCode = 'es'
-title = 'the wannabe engineer'
+title = 'el ingeniero wannabe'
 theme = 'not-much'
 
 [markup]
@@ -33,15 +33,8 @@ showPostsSummary = true
     weight = 3
   
   [[menu.main]]
-    identifier = "about"
-    name = "about"
-    title = "about"
-    url = "/about"
-    weight = 2
-  
-  [[menu.main]]
-    identifier = "tags"
-    name = "tags"
-    title = "tags"
+    identifier = "etiquetas"
+    name = "etiquetas"
+    title = "etiquetas"
     url = "/tags"
     weight = 4

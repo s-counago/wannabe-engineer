@@ -2,7 +2,7 @@
 date = '2025-11-20T23:30:26+01:00'
 draft = false
 title = 'No me gusta la magia'
-summary = 'Sobre documentación, Spring Boot y abstracción'
+summary = 'Sobre documentación, Spring Boot y abstracción.'
 tags = ["java", "abstracción", "docs", "spring"]
 +++
 
@@ -48,7 +48,7 @@ Resulta que Spring viene con una versión integrada de Hibernate que genera prob
 
 Ahora sí que tengo el `hola-mundo` preparado, pero el cristo que tengo montado intentando entender dónde encajan exactamente conceptos como `DataSource`, `JDBC`, `SpringData JPA`, `EntityManager`, `JPA`, `Jakarta` y demás conceptos relacionados-pero-distintos no está en los escritos.
 
-## _Rendez-vous_
+## _Rendezvous_
 
 Ahora sé que `DataSource` gestiona conexiones y está construido sobre la `JDBC`, que es la API de conectividad de Java (que queda más abajo del stack de abstracciones). Que `SpringData JPA` es una implementación de la especificación `JPA` y `EntityManager` está también a este nivel y permite gestionar más fácilmente el acceso (menos boilerplate y más claridad). `Jakarta` es el nuevo nombre que recibió al cambiar Java EE de dueño (cambio que se produjo por copyright, bastante gracioso si me preguntan. Si me regalan algo, ¿por qué tendría que cambiarle el nombre?)
 

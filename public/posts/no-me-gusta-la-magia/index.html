@@ -1,5 +1,188 @@
-<!doctype html><html lang=es dir=ltr><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel="shortcut icon" type=image/png href=https://sergiodev.eth.limo/favicon.ico><meta property="og:url" content="https://sergiodev.eth.limo/posts/no-me-gusta-la-magia/"><meta property="og:site_name" content="el ingeniero wannabe"><meta property="og:title" content="No me gusta la magia"><meta property="og:description" content="Sobre documentación, Spring Boot y abstracción"><meta property="og:locale" content="es"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2025-11-20T23:30:26+01:00"><meta property="article:modified_time" content="2025-11-20T23:30:26+01:00"><meta property="article:tag" content="Java"><meta property="article:tag" content="Abstracción"><meta property="article:tag" content="Docs"><meta property="article:tag" content="Spring"><title>el ingeniero wannabe | No me gusta la magia</title><link rel=stylesheet href=/css/main.min.7a5aa62374950b34aa4f00a5e381b1d636eaba9aa92f54c27fdd66761414fc80.css integrity="sha256-elqmI3SVCzSqTwCl44Gx1jbqupqpL1TCf91mdhQU/IA=" crossorigin=anonymous><link rel=stylesheet href=/css/palette/eink.min.5ad0cf71d2b7bcdbc30dd35330d764cab4d1e9c8688266332391d4dc40656edb.css integrity="sha256-WtDPcdK3vNvDDdNTMNdkyrTR6chogmYzI5HU3EBlbts=" crossorigin=anonymous><script src=/js/main.86bb3d8e6f46df0fc97c2731e6b99175a13b87a4086acf578ff9b6992fcf32c1.js integrity="sha256-hrs9jm9G3w/JfCcx5rmRdaE7h6QIas9Xj/m2mS/PMsE=" crossorigin=anonymous></script><link href=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css rel=stylesheet integrity=sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH crossorigin=anonymous></head><body><main><div class="container pt-5"><div class="row mt-5 pt-5"><nav aria-label=breadcrumb class="small navbar navbar-expand-lg"><button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#collapsibleMenu aria-controls=collapsibleMenu aria-expanded=false aria-label="Toggle navigation">
-<span class=navbar-toggler-icon></span></button><div class="collapse navbar-collapse mt-3 mt-md-0" id=collapsibleMenu><ol class="breadcrumb fw-bold"><li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0"><a href=/>home</a></li><li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0"><a href=/posts class="text-decoration-underline link-offset-3">posts</a></li><li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0"><a href=/tags>etiquetas</a></li></ol></div></nav></div><div class=post><header class=mb-4><h1 class=text-uppercase>No me gusta la magia</h1><div aria-label=breadcrumb><ol class=breadcrumb><li class="breadcrumb-item small"><time datetime=2025-11-20T23:30:26+01:00>November 20, 2025</time></li><li class="breadcrumb-item small">7 minutes</li></ol></div></header><article><h2 id=prefacio>Prefacio</h2><p>A lo mejor todo esto es una skill issue como un templo de grande y en realidad es bastante más obvio de lo que pueda parecer y no lo sé.</p><p>Aún partiendo de la base de que esto suele ser así (y ya sabiendo que cojeo de la pata de los despistes y de leer documentación en diagonal) creo que la documentación inicial debería estar entre un 50 y un 125% más idiotizada y a prueba de tontos. Pero podría ser que no soy el más espabilado, eso siempre por delante (aunque me guste creer lo contrario).</p><p>Y todo esto dentro del contexto de ser alguien relativamente novato en la industria que está aprendiendo por su cuenta según sus intereses, lo que opino (al momento de escribir esto) está sujeto a cambios constantes y debería tener (y tiene) el peso justito y necesario.</p><h2 id=contexto>Contexto</h2><p>Estoy desarrollando <a href=https://scod.is-a.dev/projects.html>realista</a>, una aplicación de coordinación entre inquilinos para conseguir información <em>real</em> sobre las viviendas a las que intentamos acceder con todos sus defectos (y virtudes) para, al menos, saberlos de antemano, llevarnos menos sorpresas e intentar saber si la gestora va a tardar 8 meses en cambiar un calentador, para saber si va a tocar comprar una olla industrial para calentar agua con antelación.</p><p>Para esto empecé con el stack con el que tengo experiencia profesional, que consiste en Spring con Hibernate y PostgreSQL en el backend y Next.js/React para el frontend.</p><h2 id=de-camino-al-hola-mundo>De camino al hola-mundo</h2><p>Me podía esperar problemas al empezar con Spring ya que, a pesar de haberlo utilizado en mi entorno laboral, nunca había preparado un backend entero desde cero con este <em>framework</em>. Pero para mi sorpresa no me funcionaba ni un <code>hola-mundo</code> de Java vainilla pero me consoló saber que a otro puñado de personas les pasaba lo mismo y gestionar el versionado de Java en Linunx no es lo más intuitivo del mundo.</p><p>Partía de una instalación de Java en mi Fedora que no recordaba bien cómo la había hecho, así que haciendo inventario, resulta que mi <code>java</code> (sólo el JRE) tenía la versión 17 de la distribución Amazon Coretto y no tenía forma de compilarlo. Así que a instalar un JDK completo para poder compilar mis cosas. Y obviamente tener distribuciones distintas no es buena idea, así que después de media hora sin poder desintalar el JRE como tocaba, lo hice a mano y conseguí compilar un hola mundo en Java. Acto seguido encontré por <del>Google</del> Kagi adelante un programita majísimo que me facilitó la vida inmensamente, me permitió limpiar las instalaciones previas e instalar OpenJDK.</p><p>Gracias, <a href=https://sdkman.io/>SDKMAN</a>. Y yo os maldigo JREs, JDKs, <code>java --version</code>, <code>javac -version</code> y <code>$JAVA_HOME</code>.</p><p>El <em>quick start</em> de Spring es muy bueno. Da contexto, especifica los caminos distintos del desarrollo con Maven y Gradle y, quitando la odisea previa, todo fue como la seda.</p><p>Maven no dio mucho problema aunque lo de tener que copiar el mvnw.sh de otro proyecto de ejemplo por no-recuerdo-qué-error no fue demasiado bonito, pero se apañó bien.</p><p>Con Java ordenado, Spring Boot funcionando y teniendo un hola mundo funcional, en este momento tocaba ponerse con la persistencia.</p><h2 id=persistencia>Persistencia</h2><p>No quería tener que instalar nada más, así que me instalé (jaja) Docker para tener una instancia de PostgreSQL y todo iba correcto. Con el <code>docker-compose.yaml</code> listo y quitando que se borraba todo con cada encendido por no haber configurado el volumen correctamente, todo fue correcto.</p><p>Conozco Hibernate y el patrón de <code>Entidad - Repositorio - Servicio</code> a grandes rasgos, así que conseguir un <code>hola-mundo</code> a estas alturas no debería ser complicado. Después de revisar la documentación de inicialización de bases de datos de Spring sin ver cómo montarlo, me fui a leer la documentación de Hibernate.</p><p>Esto lo digo con todo el cariño del mundo, se nota que la documentación de Hibernate está hecha por gente veterana y muy disfrutona. Se explayan a gusto, ponen <em>snippets</em> de ejemplo constantemente, son muy específicos con la terminología que utilizan y hasta hay ejercios para el lector, tremendo.</p><p>Pero no compilaba ni desde la primera línea de código. Spring configura al inicio lo relacionado con la base de datos, así que esta tenía que estar funcionando. Lo revisé, entré a la consola y después de aprender un poquito de Docker, resultó que lo que tenía que estar fallando era otra cosa. Y de hecho, ni siquiera compilaba desde que añadí la dependencia de Hibernate al <code>pom</code>. Revisé el repositorio de Maven para ver que la versión de la documentación es la más reciente (lo era), copio-pego el error en <del>Google</del> Kagi para rebuscar en Stack Overflow y reviso la configuración del dialecto, la URL de la base de datos, los puertos (internos y externos de Docker), la configuración del DDL (por si acaso) y absolutamente nada funciona. El error ya no era descriptivo así que fui a preguntarle a Claude.</p><p>Resulta que Spring viene con una versión integrada de Hibernate que genera problemas de compatibilidad y sólo por asegurarme de que el <a href=#prefacio>prefacio</a> no tenía razón, me repaso toda la documentación de Spring para ver si encuentro algo sobre esto (para futuras ocasiones) y&mldr; efectivamente lo menciona y explica, vaya por dios. El <a href=#prefacio>prefacio</a> se lleva este punto.</p><p>Ahora sí que tengo el <code>hola-mundo</code> preparado, pero el cristo que tengo montado intentando entender dónde encajan exactamente conceptos como <code>DataSource</code>, <code>JDBC</code>, <code>SpringData JPA</code>, <code>EntityManager</code>, <code>JPA</code>, <code>Jakarta</code> y demás conceptos relacionados-pero-distintos no está en los escritos.</p><h2 id=rendez-vous><em>Rendez-vous</em></h2><p>Ahora sé que <code>DataSource</code> gestiona conexiones y está construido sobre la <code>JDBC</code>, que es la API de conectividad de Java (que queda más abajo del stack de abstracciones). Que <code>SpringData JPA</code> es una implementación de la especificación <code>JPA</code> y <code>EntityManager</code> está también a este nivel y permite gestionar más fácilmente el acceso (menos boilerplate y más claridad). <code>Jakarta</code> es el nuevo nombre que recibió al cambiar Java EE de dueño (cambio que se produjo por copyright, bastante gracioso si me preguntan. Si me regalan algo, ¿por qué tendría que cambiarle el nombre?)</p><p>Todo esto hace que al principio sea increíblemente fácil perderse en cualquiera de los niveles de la pila de abstracciones incluso a pesar de haber hecho un intento honesto de seguir la documentación. Que conozca las definiciones a grandes rasgos de ese puñado de conceptos no significa que los conozca en profundidad pero sí tengo bastante claro que es un problema manejable, interesante y es <strong>fascinante</strong> descubrir estas simas poco a poco, error a error.</p><h2 id=la-magia>La magia</h2><p>Volviendo a hacer inventario, ya podía rescatar información de mi base de datos y escupirla en el frontend, maravilloso. Pero no encontraba la query que estaba utilizando. ¿Cómo va a ser eso?</p><p>Tengo mi entidad con su anotación @Entity, mi servicio con nada más que <em>boilerplate</em>, anotaciones esta vez más raras y una referencia al repositorio: <code>entityRepository.findById(id);</code> que también está anotado y también completamente vacío que, de alguna forma, interactúa con mi <code>entityRequest</code> (que de nuevo es una clase <em>boiler</em> sin ninguna referencia externa pero sin la cual no funciona).</p><figure><img src=https://i.kym-cdn.com/entries/icons/original/000/054/773/doakescover.jpg><figcaption><h4>El tío que sospecha de Dexter</h4></figcaption></figure><p>Aquí obviamente hay truco, y es que gente más lista que yo se encargó de que dinámimcamente estos métodos básicos se generen para mi comodidad. Y <code>entityRequest</code> no es más que un DTO que utiliza Jackson para parsear JSON entrante, y las anotaciones le sirven a Hibernate para, precisamente, localizar las dependencias necesarias para crear estas funcionalidades.</p><h2 id=concluyendo>Concluyendo</h2><p>¿La magia es mala? No lo creo. Si se utiliza en una <a href=https://nareshit.com/blogs/how-full-stack-java-powers-fortune-500-companies-in-2025>parte importante de las empresas en la <em>Fortune 500</em></a>, tan malo no será. Pero no quita que me guste que las cosas sean más explícitas, tanto por dentro como por fuera. Particularmente porque de vez en cuando las cosas se rompen (ver los últimos tropiezos de <a href=https://aws.amazon.com/premiumsupport/technology/pes/>Amazon</a> y <a href=https://blog.cloudflare.com/tag/post-mortem/>Cloudflare</a>) y probablemente deberían ser más obvias tanto en diseño como en implementación.</p><p>En cualquier caso, infinitamente agradecido estoy de que esto sea público, se me permita estudiarlo porque quiero y puedo sin más explicaciones y a pesar de cualquier opinión que pueda tener sólo estoy aprendiendo.</p><p>Y si yo me estoy tropezando con esto seguramente sea porque otros antes hicieron lo mismo en baches que ya están más que reparados gracias al trabajo de mucha gente, muy capaz y muchos sin nombre, así que un besazo para todos ellos.</p></article><div class="tags pb-4 pt-2"><a class="badge rounded-pill text-uppercase text-bg-secondary" href=/tags/java/>Java</a>
-<a class="badge rounded-pill text-uppercase text-bg-secondary" href=/tags/abstracci%C3%B3n/>Abstracción</a>
-<a class="badge rounded-pill text-uppercase text-bg-secondary" href=/tags/docs/>Docs</a>
-<a class="badge rounded-pill text-uppercase text-bg-secondary" href=/tags/spring/>Spring</a></div><div class=row><div class=col-md><a href=https://sergiodev.eth.limo/posts/que-es-eth-limo/><span>previous: </span><span>¿Qué es eth-limo?</span></a></div><div class="col-md text-md-end"></div></div></div></div><footer><div class="container mt-4 pb-1"><p class="small opacity-75">// powered by <a href=https://gohugo.io/>hugo</a> and <a href=https://github.com/imgios/not-much>imgios/not-much</a></p></div></footer></main><script src=https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js integrity=sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz crossorigin=anonymous></script><script>function detectThemePreferences(){let e=["text-dark"];window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches&&(e=["text-light","dark"]),document.body.classList.add(...e)}detectThemePreferences()</script></body></html>
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="shortcut icon" type="image/png" href="http://localhost:1313/favicon.ico" />
+<meta property="og:url" content="http://localhost:1313/posts/no-me-gusta-la-magia/">
+  <meta property="og:site_name" content="el ingeniero wannabe">
+  <meta property="og:title" content="No me gusta la magia">
+  <meta property="og:description" content="Sobre documentación, Spring Boot y abstracción">
+  <meta property="og:locale" content="es">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-11-20T23:30:26+01:00">
+    <meta property="article:modified_time" content="2025-11-20T23:30:26+01:00">
+    <meta property="article:tag" content="Java">
+    <meta property="article:tag" content="Abstracción">
+    <meta property="article:tag" content="Docs">
+    <meta property="article:tag" content="Spring">
+
+<title>el ingeniero wannabe | No me gusta la magia</title>
+
+    <link rel="stylesheet" href="/css/main.css">
+  
+      <link rel="stylesheet" href="/css/palette/eink.css">
+
+      <script src="/js/main.js"></script>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+</head>
+
+  
+<body
+>
+  
+  <main>
+    
+  <div class="container pt-5">
+    <div class="row mt-5 pt-5">
+      
+  <nav aria-label="breadcrumb" class="small navbar navbar-expand-lg">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleMenu" aria-controls="collapsibleMenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse mt-3 mt-md-0" id="collapsibleMenu">
+      <ol class="breadcrumb fw-bold">
+    <li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0">
+      <a href="/"
+        
+      >home</a>
+      
+    </li>
+    <li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0">
+      <a href="/posts"
+        class="text-decoration-underline link-offset-3"
+        
+      >posts</a>
+      
+    </li>
+    <li class="breadcrumb-item my-1 my-md-0 ms-3 ms-md-0">
+      <a href="/tags"
+        
+      >etiquetas</a>
+      
+    </li>
+      </ol>
+    </div>
+  </nav>
+
+    </div>
+    <div class="post">
+      <header class="mb-4">
+        <h1 class="text-uppercase">No me gusta la magia</h1>
+        
+        
+        <div aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item small">
+              
+              <time datetime="2025-11-20T23:30:26&#43;01:00">November 20, 2025</time>
+            </li>
+            
+            
+            <li class="breadcrumb-item small">
+              7 minutes
+            </li>
+          </ol>
+        </div>
+      </header>
+      
+      <article>
+        <h2 id="prefacio">Prefacio</h2>
+<p>A lo mejor todo esto es una skill issue como un templo de grande y en realidad es bastante más obvio de lo que pueda parecer y no lo sé.</p>
+<p>Aún partiendo de la base de que esto suele ser así (y ya sabiendo que cojeo de la pata de los despistes y de leer documentación en diagonal) creo que la documentación inicial debería estar entre un 50 y un 125% más idiotizada y a prueba de tontos. Pero podría ser que no soy el más espabilado, eso siempre por delante (aunque me guste creer lo contrario).</p>
+<p>Y todo esto dentro del contexto de ser alguien relativamente novato en la industria que está aprendiendo por su cuenta según sus intereses, lo que opino (al momento de escribir esto) está sujeto a cambios constantes y debería tener (y tiene) el peso justito y necesario.</p>
+<h2 id="contexto">Contexto</h2>
+<p>Estoy desarrollando <a href="https://scod.is-a.dev/projects.html">realista</a>, una aplicación de coordinación entre inquilinos para conseguir información <em>real</em> sobre las viviendas a las que intentamos acceder con todos sus defectos (y virtudes) para, al menos, saberlos de antemano, llevarnos menos sorpresas e intentar saber si la gestora va a tardar 8 meses en cambiar un calentador, para saber si va a tocar comprar una olla industrial para calentar agua con antelación.</p>
+<p>Para esto empecé con el stack con el que tengo experiencia profesional, que consiste en Spring con Hibernate y PostgreSQL en el backend y Next.js/React para el frontend.</p>
+<h2 id="de-camino-al-hola-mundo">De camino al hola-mundo</h2>
+<p>Me podía esperar problemas al empezar con Spring ya que, a pesar de haberlo utilizado en mi entorno laboral, nunca había preparado un backend entero desde cero con este <em>framework</em>. Pero para mi sorpresa no me funcionaba ni un <code>hola-mundo</code> de Java vainilla pero me consoló saber que a otro puñado de personas les pasaba lo mismo y gestionar el versionado de Java en Linunx no es lo más intuitivo del mundo.</p>
+<p>Partía de una instalación de Java en mi Fedora que no recordaba bien cómo la había hecho, así que haciendo inventario, resulta que mi <code>java</code> (sólo el JRE) tenía la versión 17 de la distribución Amazon Coretto y no tenía forma de compilarlo. Así que a instalar un JDK completo para poder compilar mis cosas. Y obviamente tener distribuciones distintas no es buena idea, así que después de media hora sin poder desintalar el JRE como tocaba, lo hice a mano y conseguí compilar un hola mundo en Java. Acto seguido encontré por <del>Google</del> Kagi adelante un programita majísimo que me facilitó la vida inmensamente, me permitió limpiar las instalaciones previas e instalar OpenJDK.</p>
+<p>Gracias, <a href="https://sdkman.io/">SDKMAN</a>. Y yo os maldigo JREs, JDKs, <code>java --version</code>, <code>javac -version</code> y <code>$JAVA_HOME</code>.</p>
+<p>El <em>quick start</em> de Spring es muy bueno. Da contexto, especifica los caminos distintos del desarrollo con Maven y Gradle y, quitando la odisea previa, todo fue como la seda.</p>
+<p>Maven no dio mucho problema aunque lo de tener que copiar el mvnw.sh de otro proyecto de ejemplo por no-recuerdo-qué-error no fue demasiado bonito, pero se apañó bien.</p>
+<p>Con Java ordenado, Spring Boot funcionando y teniendo un hola mundo funcional, en este momento tocaba ponerse con la persistencia.</p>
+<h2 id="persistencia">Persistencia</h2>
+<p>No quería tener que instalar nada más, así que me instalé (jaja) Docker para tener una instancia de PostgreSQL y todo iba correcto. Con el <code>docker-compose.yaml</code> listo y quitando que se borraba todo con cada encendido por no haber configurado el volumen correctamente, todo fue correcto.</p>
+<p>Conozco Hibernate y el patrón de <code>Entidad - Repositorio - Servicio</code> a grandes rasgos, así que conseguir un <code>hola-mundo</code> a estas alturas no debería ser complicado. Después de revisar la documentación de inicialización de bases de datos de Spring sin ver cómo montarlo, me fui a leer la documentación de Hibernate.</p>
+<p>Esto lo digo con todo el cariño del mundo, se nota que la documentación de Hibernate está hecha por gente veterana y muy disfrutona. Se explayan a gusto, ponen <em>snippets</em> de ejemplo constantemente, son muy específicos con la terminología que utilizan y hasta hay ejercios para el lector, tremendo.</p>
+<p>Pero no compilaba ni desde la primera línea de código. Spring configura al inicio lo relacionado con la base de datos, así que esta tenía que estar funcionando. Lo revisé, entré a la consola y después de aprender un poquito de Docker, resultó que lo que tenía que estar fallando era otra cosa. Y de hecho, ni siquiera compilaba desde que añadí la dependencia de Hibernate al <code>pom</code>. Revisé el repositorio de Maven para ver que la versión de la documentación es la más reciente (lo era), copio-pego el error en <del>Google</del> Kagi para rebuscar en Stack Overflow y reviso la configuración del dialecto, la URL de la base de datos, los puertos (internos y externos de Docker), la configuración del DDL (por si acaso) y absolutamente nada funciona. El error ya no era descriptivo así que fui a preguntarle a Claude.</p>
+<p>Resulta que Spring viene con una versión integrada de Hibernate que genera problemas de compatibilidad y sólo por asegurarme de que el <a href="#prefacio">prefacio</a> no tenía razón, me repaso toda la documentación de Spring para ver si encuentro algo sobre esto (para futuras ocasiones) y&hellip; efectivamente lo menciona y explica, vaya por dios. El <a href="#prefacio">prefacio</a> se lleva este punto.</p>
+<p>Ahora sí que tengo el <code>hola-mundo</code> preparado, pero el cristo que tengo montado intentando entender dónde encajan exactamente conceptos como <code>DataSource</code>, <code>JDBC</code>, <code>SpringData JPA</code>, <code>EntityManager</code>, <code>JPA</code>, <code>Jakarta</code> y demás conceptos relacionados-pero-distintos no está en los escritos.</p>
+<h2 id="rendez-vous"><em>Rendez-vous</em></h2>
+<p>Ahora sé que <code>DataSource</code> gestiona conexiones y está construido sobre la <code>JDBC</code>, que es la API de conectividad de Java (que queda más abajo del stack de abstracciones). Que <code>SpringData JPA</code> es una implementación de la especificación <code>JPA</code> y <code>EntityManager</code> está también a este nivel y permite gestionar más fácilmente el acceso (menos boilerplate y más claridad). <code>Jakarta</code> es el nuevo nombre que recibió al cambiar Java EE de dueño (cambio que se produjo por copyright, bastante gracioso si me preguntan. Si me regalan algo, ¿por qué tendría que cambiarle el nombre?)</p>
+<p>Todo esto hace que al principio sea increíblemente fácil perderse en cualquiera de los niveles de la pila de abstracciones incluso a pesar de haber hecho un intento honesto de seguir la documentación. Que conozca las definiciones a grandes rasgos de ese puñado de conceptos no significa que los conozca en profundidad pero sí tengo bastante claro que es un problema manejable, interesante y es <strong>fascinante</strong> descubrir estas simas poco a poco, error a error.</p>
+<h2 id="la-magia">La magia</h2>
+<p>Volviendo a hacer inventario, ya podía rescatar información de mi base de datos y escupirla en el frontend, maravilloso. Pero no encontraba la query que estaba utilizando. ¿Cómo va a ser eso?</p>
+<p>Tengo mi entidad con su anotación @Entity, mi servicio con nada más que <em>boilerplate</em>, anotaciones esta vez más raras y una referencia al repositorio: <code>entityRepository.findById(id);</code> que también está anotado y también completamente vacío que, de alguna forma, interactúa con mi <code>entityRequest</code> (que de nuevo es una clase <em>boiler</em> sin ninguna referencia externa pero sin la cual no funciona).</p>
+<figure><img src="https://i.kym-cdn.com/entries/icons/original/000/054/773/doakescover.jpg"><figcaption>
+      <h4>El tío que sospecha de Dexter</h4>
+    </figcaption>
+</figure>
+
+<p>Aquí obviamente hay truco, y es que gente más lista que yo se encargó de que dinámimcamente estos métodos básicos se generen para mi comodidad. Y <code>entityRequest</code> no es más que un DTO que utiliza Jackson para parsear JSON entrante, y las anotaciones le sirven a Hibernate para, precisamente, localizar las dependencias necesarias para crear estas funcionalidades.</p>
+<h2 id="concluyendo">Concluyendo</h2>
+<p>¿La magia es mala? No lo creo. Si se utiliza en una <a href="https://nareshit.com/blogs/how-full-stack-java-powers-fortune-500-companies-in-2025">parte importante de las empresas en la <em>Fortune 500</em></a>, tan malo no será. Pero no quita que me guste que las cosas sean más explícitas, tanto por dentro como por fuera. Particularmente porque de vez en cuando las cosas se rompen (ver los últimos tropiezos de <a href="https://aws.amazon.com/premiumsupport/technology/pes/">Amazon</a> y <a href="https://blog.cloudflare.com/tag/post-mortem/">Cloudflare</a>) y probablemente deberían ser más obvias tanto en diseño como en implementación.</p>
+<p>En cualquier caso, infinitamente agradecido estoy de que esto sea público, se me permita estudiarlo porque quiero y puedo sin más explicaciones y a pesar de cualquier opinión que pueda tener sólo estoy aprendiendo.</p>
+<p>Y si yo me estoy tropezando con esto seguramente sea porque otros antes hicieron lo mismo en baches que ya están más que reparados gracias al trabajo de mucha gente, muy capaz y muchos sin nombre, así que un besazo para todos ellos.</p>
+
+      </article>
+      
+  <div class="tags pb-4 pt-2">
+    
+    
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/java/">Java</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/abstracci%C3%B3n/">Abstracción</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/docs/">Docs</a>
+        <a class="badge rounded-pill text-uppercase text-bg-secondary" href="/tags/spring/">Spring</a>
+  </div>
+
+      <div class="row">
+    <div class="col-md">
+        
+        <a href="http://localhost:1313/posts/que-es-eth-limo/">
+            <span>previous: </span>
+            <span>¿Qué es eth-limo?</span>
+        </a>
+        
+    </div>
+    <div class="col-md text-md-end">
+        
+    </div>
+</div>
+      
+    </div>
+  </div>
+  <footer>
+    <div class="container mt-4 pb-1">
+    <p class="small opacity-75">
+        
+        
+        // powered by <a href="https://gohugo.io/">hugo</a> and <a href="https://github.com/imgios/not-much">imgios/not-much</a>
+        
+    </p>
+</div>
+
+  </footer>
+
+  </main>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script>
+    function detectThemePreferences() {
+      let themeClasses = ["text-dark"];
+      if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          themeClasses = ["text-light", "dark"];
+      }
+      document.body.classList.add(...themeClasses);
+    }
+
+    detectThemePreferences();
+  </script>
+</body>
+</html>

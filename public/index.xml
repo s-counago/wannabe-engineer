@@ -1,1 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>el ingeniero wannabe</title><link>https://sergiodev.eth.limo/</link><description>Recent content on el ingeniero wannabe</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 20 Nov 2025 23:30:26 +0100</lastBuildDate><atom:link href="https://sergiodev.eth.limo/index.xml" rel="self" type="application/rss+xml"/><item><title>No me gusta la magia</title><link>https://sergiodev.eth.limo/posts/no-me-gusta-la-magia/</link><pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate><guid>https://sergiodev.eth.limo/posts/no-me-gusta-la-magia/</guid><description>Sobre documentación, Spring Boot y abstracción</description></item><item><title>¿Qué es eth-limo?</title><link>https://sergiodev.eth.limo/posts/que-es-eth-limo/</link><pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate><guid>https://sergiodev.eth.limo/posts/que-es-eth-limo/</guid><description>¿Qué es, cómo funciona y por qué lo elegí? Spoiler: porque me parece un paradigma interesante y con una barbaridad de potencial.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>el ingeniero wannabe</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on el ingeniero wannabe</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 20 Nov 2025 23:30:26 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>No me gusta la magia</title>
+      <link>http://localhost:1313/posts/no-me-gusta-la-magia/</link>
+      <pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate>
+      <guid>http://localhost:1313/posts/no-me-gusta-la-magia/</guid>
+      <description>Sobre documentación, Spring Boot y abstracción</description>
+    </item>
+    <item>
+      <title>¿Qué es eth-limo?</title>
+      <link>http://localhost:1313/posts/que-es-eth-limo/</link>
+      <pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate>
+      <guid>http://localhost:1313/posts/que-es-eth-limo/</guid>
+      <description>¿Qué es, cómo funciona y por qué lo elegí? Spoiler: porque me parece un paradigma interesante y con una barbaridad de potencial.</description>
+    </item>
+  </channel>
+</rss>

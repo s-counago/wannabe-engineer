@@ -1,1 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml"><url><loc>https://sergiodev.eth.limo/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/abstracci%C3%B3n/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/docs/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/java/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/posts/no-me-gusta-la-magia/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/posts/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/spring/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/</loc><lastmod>2025-11-20T23:30:26+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/posts/que-es-eth-limo/</loc><lastmod>2025-11-19T22:19:08+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/descentralizaci%C3%B3n/</loc><lastmod>2025-11-19T22:19:08+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/tags/eth/</loc><lastmod>2025-11-19T22:19:08+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/about/</loc><lastmod>2024-12-16T11:30:04+01:00</lastmod></url><url><loc>https://sergiodev.eth.limo/categories/</loc></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>http://localhost:1313/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/abstracci%C3%B3n/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/docs/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/java/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/no-me-gusta-la-magia/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/spring/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2025-11-20T23:30:26+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/posts/que-es-eth-limo/</loc>
+    <lastmod>2025-11-19T22:19:08+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/descentralizaci%C3%B3n/</loc>
+    <lastmod>2025-11-19T22:19:08+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/eth/</loc>
+    <lastmod>2025-11-19T22:19:08+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/about/</loc>
+    <lastmod>2024-12-16T11:30:04+01:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/categories/</loc>
+  </url>
+</urlset>

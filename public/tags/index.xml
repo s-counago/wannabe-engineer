@@ -1,1 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Tags on el ingeniero wannabe</title><link>https://sergiodev.eth.limo/tags/</link><description>Recent content in Tags on el ingeniero wannabe</description><generator>Hugo</generator><language>es</language><lastBuildDate>Thu, 20 Nov 2025 23:30:26 +0100</lastBuildDate><atom:link href="https://sergiodev.eth.limo/tags/index.xml" rel="self" type="application/rss+xml"/><item><title>Abstracción</title><link>https://sergiodev.eth.limo/tags/abstracci%C3%B3n/</link><pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/abstracci%C3%B3n/</guid><description/></item><item><title>Docs</title><link>https://sergiodev.eth.limo/tags/docs/</link><pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/docs/</guid><description/></item><item><title>Java</title><link>https://sergiodev.eth.limo/tags/java/</link><pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/java/</guid><description/></item><item><title>Spring</title><link>https://sergiodev.eth.limo/tags/spring/</link><pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/spring/</guid><description/></item><item><title>Descentralización</title><link>https://sergiodev.eth.limo/tags/descentralizaci%C3%B3n/</link><pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/descentralizaci%C3%B3n/</guid><description/></item><item><title>Eth</title><link>https://sergiodev.eth.limo/tags/eth/</link><pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate><guid>https://sergiodev.eth.limo/tags/eth/</guid><description/></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on el ingeniero wannabe</title>
+    <link>http://localhost:1313/tags/</link>
+    <description>Recent content in Tags on el ingeniero wannabe</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Thu, 20 Nov 2025 23:30:26 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Abstracción</title>
+      <link>http://localhost:1313/tags/abstracci%C3%B3n/</link>
+      <pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate>
+      <guid>http://localhost:1313/tags/abstracci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Docs</title>
+      <link>http://localhost:1313/tags/docs/</link>
+      <pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate>
+      <guid>http://localhost:1313/tags/docs/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Java</title>
+      <link>http://localhost:1313/tags/java/</link>
+      <pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate>
+      <guid>http://localhost:1313/tags/java/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Spring</title>
+      <link>http://localhost:1313/tags/spring/</link>
+      <pubDate>Thu, 20 Nov 2025 23:30:26 +0100</pubDate>
+      <guid>http://localhost:1313/tags/spring/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Descentralización</title>
+      <link>http://localhost:1313/tags/descentralizaci%C3%B3n/</link>
+      <pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate>
+      <guid>http://localhost:1313/tags/descentralizaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Eth</title>
+      <link>http://localhost:1313/tags/eth/</link>
+      <pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate>
+      <guid>http://localhost:1313/tags/eth/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

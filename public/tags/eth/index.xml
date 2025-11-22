@@ -1,1 +1,19 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Eth on el ingeniero wannabe</title><link>https://sergiodev.eth.limo/tags/eth/</link><description>Recent content in Eth on el ingeniero wannabe</description><generator>Hugo</generator><language>es</language><lastBuildDate>Wed, 19 Nov 2025 22:19:08 +0100</lastBuildDate><atom:link href="https://sergiodev.eth.limo/tags/eth/index.xml" rel="self" type="application/rss+xml"/><item><title>¿Qué es eth-limo?</title><link>https://sergiodev.eth.limo/posts/que-es-eth-limo/</link><pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate><guid>https://sergiodev.eth.limo/posts/que-es-eth-limo/</guid><description>¿Qué es, cómo funciona y por qué lo elegí? Spoiler: porque me parece un paradigma interesante y con una barbaridad de potencial.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Eth on el ingeniero wannabe</title>
+    <link>http://localhost:1313/tags/eth/</link>
+    <description>Recent content in Eth on el ingeniero wannabe</description>
+    <generator>Hugo</generator>
+    <language>es</language>
+    <lastBuildDate>Wed, 19 Nov 2025 22:19:08 +0100</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/eth/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>¿Qué es eth-limo?</title>
+      <link>http://localhost:1313/posts/que-es-eth-limo/</link>
+      <pubDate>Wed, 19 Nov 2025 22:19:08 +0100</pubDate>
+      <guid>http://localhost:1313/posts/que-es-eth-limo/</guid>
+      <description>¿Qué es, cómo funciona y por qué lo elegí? Spoiler: porque me parece un paradigma interesante y con una barbaridad de potencial.</description>
+    </item>
+  </channel>
+</rss>

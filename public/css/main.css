@@ -375,3 +375,9 @@ hr {
 .giscus {
   padding-top: 1.5rem;
 }
+
+@media (max-width: 767px) {
+  .home-title {
+    font-size: 1.7rem !important;
+  }
+}
